@@ -14,7 +14,7 @@ const Blogs = () => {
     },[])
 
     return (
-        <div>
+        <div className='md:w-2/3'>
             <p>Blogs: {blogs.length}</p>
             
             {/* Map all blogs data */}
