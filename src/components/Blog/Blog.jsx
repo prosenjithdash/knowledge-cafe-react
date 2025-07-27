@@ -4,7 +4,8 @@ const Blog = ({ blog }) => {
     const { title } = blog;
     return (
         <div>
-            <p>Title:{title}</p>
+            <p>Title Name:{title}</p>
+
         </div>
     );
 };
