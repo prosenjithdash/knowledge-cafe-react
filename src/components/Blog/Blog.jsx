@@ -29,7 +29,7 @@ const Blog = ({ blog, handleAddToBookmark }) => {
 
                     {/* Bookmark Logo */}
                     <div>
-                        <MdBookmarkAdd onClick={handleAddToBookmark}/>
+                        <MdBookmarkAdd onClick={() => handleAddToBookmark(blog)}/>
                     </div>
                 </div>
             </div>
