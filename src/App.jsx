@@ -22,10 +22,15 @@ function App() {
   const [totalReadTime, setTotalReadTime] = useState(0)
 
   // handleRead time
-  const handleTotalReadTime = (readTime) => {
+  const handleTotalReadTime = (id,readTime) => {
     // console.log('Read time is: ', readTime)
     const newReadTime = totalReadTime + readTime;
     setTotalReadTime(newReadTime)
+
+    // Remove bookmarks
+    // console.log('Remove id:', id)
+    const remainingBookmark = bookmarks.filter(bookmark => bookmark.id !== id)
+    setBookmarks(remainingBookmark);
   }
 
   return (
