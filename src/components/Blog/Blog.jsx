@@ -1,6 +1,6 @@
 import React from 'react';
 import { MdBookmarkAdd } from "react-icons/md";
-const Blog = ({ blog, handleAddToBookmark }) => {
+const Blog = ({ blog, handleAddToBookmark, handleTotalReadTime }) => {
     const { id,cover,title,author_img,author,posted_date,reading_time,hashtags} = blog;
 
 
@@ -29,7 +29,10 @@ const Blog = ({ blog, handleAddToBookmark }) => {
 
                     {/* Bookmark Logo */}
                     <div>
-                        <MdBookmarkAdd onClick={() => handleAddToBookmark(blog)}/>
+                        <MdBookmarkAdd onClick={() => {
+                            handleAddToBookmark(blog);
+                            // handleTotalReadTime(reading_time);
+                        }} />
                     </div>
                 </div>
             </div>
@@ -52,7 +55,11 @@ const Blog = ({ blog, handleAddToBookmark }) => {
             {/* Div 04 */}
             <div className='pb-4'>
                 {/* Mark as read */}
-                <p className='text-blue-600 font-bold'><ul>Mark as read</ul></p>
+               
+               
+                <button className='text-blue-600 font-bold' onClick={() => {
+                    handleTotalReadTime(reading_time);
+                }}>Mark as read</button>
             </div>
             
 

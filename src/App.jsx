@@ -12,17 +12,34 @@ function App() {
 
   // handle for bookmarks
   const handleAddToBookmark = (blog) => {
-    console.log(blog)
+    // console.log(blog)
     const newBookmark = [...bookmarks,blog]
     setBookmarks(newBookmark)
+  }
+
+
+  // Read total time state
+  const [totalReadTime, setTotalReadTime] = useState(0)
+
+  // handleRead time
+  const handleTotalReadTime = (readTime) => {
+    // console.log('Read time is: ', readTime)
+    const newReadTime = totalReadTime + readTime;
+    setTotalReadTime(newReadTime)
   }
 
   return (
     <>
       <Header />
       <div className='md:flex gap-1 md:max-w-6xl mx-auto'>
-        <Blogs handleAddToBookmark={handleAddToBookmark} />
-        <BookMarks bookmarks={bookmarks} />
+        <Blogs
+          handleAddToBookmark={handleAddToBookmark}
+          handleTotalReadTime={handleTotalReadTime}
+        />
+        <BookMarks
+          bookmarks={bookmarks}
+          totalReadTime={totalReadTime}
+        />
       </div>
      
     </>
