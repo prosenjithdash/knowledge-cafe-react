@@ -1,13 +1,13 @@
 import React from 'react';
-
-const Blog = ({ blog }) => {
+import { MdBookmarkAdd } from "react-icons/md";
+const Blog = ({ blog, handleAddToBookmark }) => {
     const { id,cover,title,author_img,author,posted_date,reading_time,hashtags} = blog;
 
 
 
     return (
         <div>
-            <img className='w-[845px] h-[450px] pb-4 rounded-xl' src={cover} alt="" />
+            <img className='w-full h-[450px] pb-4 rounded-xl' src={cover} alt="" />
 
             {/* Div 01 */}
             <div className='md:flex md:justify-between items-center pb-4'>
@@ -23,13 +23,13 @@ const Blog = ({ blog }) => {
                     </div>
                 </div>
 
-                <div className='md:flex gap-2 items-center'>
+                <div className='md:flex gap-2 items-center text-gray-500'>
                     {/* Reading Time */}
-                    <p className='text-[20px]'>{reading_time}</p>
+                    <p className='text-[20px]'>{reading_time} min read</p>
 
                     {/* Bookmark Logo */}
                     <div>
-                        <h2>Logo</h2>
+                        <MdBookmarkAdd onClick={handleAddToBookmark}/>
                     </div>
                 </div>
             </div>
